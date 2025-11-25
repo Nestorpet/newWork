@@ -1,0 +1,436 @@
+
+ 
+/* @media screen and (max-width:600px) and (min-height:850px){
+    .title-bottom{
+    font-size: 0.75em;
+    }
+    .bread{
+        font-size: 70%;
+        
+    }
+    .title-bottom{
+
+        visibility: hidden;
+    }
+    .ND_card_name{
+        font-size: 70%;
+    }
+    .ND_card_zac{
+        font-size: 70%;
+    }
+
+    .ND_card_link a{
+        font-size: 65%;
+    }
+
+   
+  
+
+}  */
+
+
+@media screen and (max-width:1530px) { 
+    
+    .gr-cont-NormDoc{
+       column-gap: 48px;
+    }
+    
+}
+
+@media screen and (max-width:1400px) { 
+    
+    .gr-cont-NormDoc{
+        grid-template-columns: auto auto auto auto;
+        column-gap: 45px;
+             
+    }
+
+    .ND_card_name{
+        font-size: 95%;
+    }
+    .ND_card_zac{
+        font-size: 95%;
+    }
+    .ND_card_link a{
+        font-size: 95%;
+    }
+   
+
+    .gr_item_zagl{
+        display: none;
+    }
+     .mybtn{
+   
+    font-size: 0.7em;
+    }
+
+    .link-bread{
+    font-size: 1em;
+    letter-spacing: 2.5px;
+    
+    }
+    .mytext{
+    font-size: 1em;
+    letter-spacing: 2.5px;
+    }
+    
+
+}
+
+
+
+@media screen and (max-width:1200px) { 
+    
+    .gr-cont-NormDoc{
+        grid-template-columns: auto auto auto;
+        column-gap: 40px;
+    }
+
+    .ND_card_name{
+        font-size: 90%;
+    }
+    .ND_card_zac{
+        font-size: 90%;
+    }
+    .ND_card_link a{
+        font-size: 90%;
+    }
+     .mybtn{
+   
+    font-size: 0.6em;
+    }
+
+    .link-bread{
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    
+    }
+    .mytext{
+    font-size: 0.9em;
+    letter-spacing: 2px;
+    }
+
+}
+
+@media screen and (max-width:992px) { 
+    
+    .gr-cont-NormDoc{
+        grid-template-columns: auto auto;
+        column-gap: 30px;
+    }
+    .ND_card_name{
+        font-size: 80%;
+    }
+    .ND_card_zac{
+        font-size: 80%;
+    }
+    .ND_card_link a{
+        font-size: 80%;
+    }
+
+    .contRow{
+        font-size: 95%;
+    }
+    .hid_Stat6{
+        display: none;
+    }
+    .grid_cont_Stat{
+        
+        grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    }
+    .mybtn{
+   
+    font-size: 0.6em;
+    }
+
+    .link-bread{
+    font-size: 0.7em;
+    letter-spacing: 2px;
+    
+    }
+    .mytext{
+    font-size: 0.7em;
+    letter-spacing: 2px;
+    }
+}
+
+
+@media screen and (max-width:768px) { 
+    
+    .gr-cont-NormDoc{
+        grid-template-columns: auto;
+    }
+    .ND_card_name{
+        font-size: 70%;
+    }
+    .ND_card_zac{
+        font-size: 70%;
+    }
+    .ND_card_link a{
+        font-size: 70%;
+    }
+    .contRow{
+        font-size: 90%;
+        
+    }
+    .hid_Stat7{
+        display: none;
+    }
+    .grid_cont_Stat{
+        
+        grid-template-columns: auto auto auto auto auto auto auto auto;
+        font-size: 80%;
+       
+        }
+
+    .mybtn{
+   
+    font-size: 0.6em;
+    }
+
+    .link-bread{
+    font-size: 0.5em;
+    letter-spacing: 1px;
+    
+    }
+    .mytext{
+    font-size: 0.5em;
+    letter-spacing: 1px;
+    }
+   
+
+  
+}
+
+@media screen and (max-width:430px) { 
+    
+    .gr-cont-NormDoc{
+        grid-template-columns: auto;
+    }
+    .ND_card_name{
+        font-size: 70%;
+    }
+    .ND_card_zac{
+        font-size: 70%;
+    }
+    .ND_card_link a{
+        font-size: 70%;
+    }
+    .contRow{
+        font-size: 80%;
+       
+    }
+    .hid_Stat8, .hid_Stat5 {
+        display: none;
+    }
+
+    
+    .grid_cont_Stat{
+        
+        grid-template-columns: auto auto auto auto auto auto;
+        font-size: 70%;
+    
+        }
+
+}
+
+@media screen and (max-width:380px) { 
+    
+    .gr-cont-NormDoc{
+        grid-template-columns: auto;
+    }
+    .ND_card_name{
+        font-size: 70%;
+    }
+    .ND_card_zac{
+        font-size: 70%;
+    }
+    .ND_card_link a{
+        font-size: 70%;
+    }
+    .contRow{
+        font-size: 75%;
+       
+    }
+
+    .grid_cont_Stat{
+        
+        
+        font-size: 60%;
+    
+        }
+
+   
+    
+    }
+
+@media (max-height: 650px) {
+   
+    .title-bottom{
+
+        visibility: hidden;
+    }
+    #carouselExampleSlidesOnly{
+        width: 100%;
+        height: 100%;
+        max-width: 30rem;
+    }
+    .mptfont{
+        
+        font-size: 1.4em;
+        font-family:'terem', sans-serif;
+    }
+    .bread{
+        font-size: 0.6em;
+    }
+
+    .nav-link{
+    
+       
+        font-size: 0.8em;
+       
+        letter-spacing: 1.5px;
+       
+        
+    }
+    .nav-link:hover{
+      
+        font-size: 0.8em;
+        
+       
+    }
+
+  }
+  
+
+  
+
+
+
+ 
+  @media (max-height: 800px) and (min-height:650px){
+    
+    .title-bottom{
+
+        visibility: hidden;
+    }
+    #carouselExampleSlidesOnly{
+        width: 100%;
+        height: 100%;
+        max-width: 40rem;
+    }
+    .mptfont{
+        
+        font-size: 1.6em;
+        font-family:'terem', sans-serif;
+    }
+    .bread{
+        font-size: 0.8em;
+    }
+
+    .nav-link{
+    
+       
+        font-size: 1em;
+       
+        letter-spacing: 1.7px;
+       
+        
+    }
+    .nav-link:hover{
+      
+        font-size: 1em;
+
+       
+    }
+
+  }
+
+/*
+@media (max-height: 650px) {
+    
+    .title-bottom{
+
+        visibility: hidden;
+    }
+
+    #carouselExampleSlidesOnly{
+        width: 100%;
+        height: 100%;
+        max-width: 30rem;
+        
+        
+        margin: auto;
+        padding: auto;
+    }
+    .mptfont{
+        
+        font-size: 1.4em;
+        font-family:'terem', sans-serif;
+    }
+    .bread{
+        font-size: 0.6em;
+    }
+
+    .nav-link{
+    
+       
+        font-size: 0.8em;
+       
+        letter-spacing: 1.5px;
+       
+        
+    }
+    .nav-link:hover{
+      
+        font-size: 0.8em;
+        
+       
+    }
+    
+    
+};
+
+@media (max-height: 800px) and (min-height: 651px) {
+    .title-bottom{
+
+        visibility: hidden;
+    }
+
+    #carouselExampleSlidesOnly{
+        width: 100%;
+        height: 100%;
+        max-width: 40rem;
+        
+        
+        margin: auto;
+        padding: auto;
+    }
+    .mptfont{
+        
+        font-size: 1.6em;
+        font-family:'terem', sans-serif;
+    }
+    .bread{
+        font-size: 0.8em;
+    }
+
+    .nav-link{
+    
+       
+        font-size: 1em;
+       
+        letter-spacing: 1.7px;
+       
+        
+    }
+    .nav-link:hover{
+      
+        font-size: 1em;
+
+       
+    }
+    
+    
+};
+ 

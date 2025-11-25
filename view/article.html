@@ -1,0 +1,18 @@
+<script>
+    let articleId =location.pathname.split('/')[2];
+    let container = document.getElementById('container');
+    let formData = new FormData();
+    formData.append("article_id", articleId);
+    fetch('/article',{
+        method: "POST",
+        body: formData
+    }).then(response=>response.json())
+        .then(result=>{
+            console.log(result);
+            container.innerHTML += `
+            <h1 class="text-center">${result.title}</h1>
+            <div class="my-3">${result.content}</div>
+            <div>Автор: ${result.email}</div>
+            `
+        })
+</script>
