@@ -1,13 +1,16 @@
 <script>
     let container=document.getElementById('container');
+    //console.log(container);
         fetch('/getArticles')
         .then(function (response){return response.json()})
         .then(function (result){
-            console.log(result);
+            //console.log(result);
             for (let i = 0; i < result.length; i++){
+                
             console.log('title', result[i].title);
             console.log('content', result[i].content);
             console.log('author', result[i].author);
+           
             container.innerHTML +=`
             <div class="card w-100 mb-3">
                 <div class="card-body">

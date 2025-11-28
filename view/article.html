@@ -1,6 +1,21 @@
+   
+<div id="articleDiv"></div>
+<div class="row">
+    <form onsubmit="addComment(); return false;" class="my-4">
+        <div class="mb-3">
+            <textarea id="commentTextArea" name="comment" class="form-control" placeholder="Комментарий"></textarea>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Добавить комментарий">
+    </form>
+</div>
+<div id="commentDiv"></div>
+
 <script>
     let articleId =location.pathname.split('/')[2];
     let container = document.getElementById('container');
+    let commentTextArea = document.getElementById('commentTextArea');
+    let articleDiv = document.getElementById('articleDiv');
+    let commentDiv = document.getElementById('commentDiv');
     let formData = new FormData();
     formData.append("article_id", articleId);
     fetch('/article',{
@@ -9,10 +24,51 @@
     }).then(response=>response.json())
         .then(result=>{
             console.log(result);
-            container.innerHTML += `
+            articleDiv.innerHTML = `
             <h1 class="text-center">${result.title}</h1>
             <div class="my-3">${result.content}</div>
-            <div>Автор: ${result.email}</div>
-            `
+            <div class="row">
+                <div class="col-6 text-start">
+                    Автор: ${result.email}
+                </div>
+                <div class="col-6 text-end">
+                    <a href="/deleteArticle/?id=${articleId}">[удалить]</a>
+                </div>
+            </div>
+            `;
         })
+    fetch('/getCommentByArticalId', {
+        method: "POST",
+        body: formData
+    }).then(response=>response.json())
+        .then(result=>{
+            for (let index = 0; index < result.length; index++) {
+                const element = result[index];
+                commentDiv.innerHTML+=`
+                <div class="card mb-3">
+                    <div class="card-header">
+                        ${result[index].user_id}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">"${result[index].comment}"</p>
+                    </div>
+                </div>
+                `
+            }
+            console.log(result);
+        })
+
+    function addComment(){
+        let formData = new FormData();
+        formData.append('article_id', articleId);
+        formData.append(commentTextArea.name, commentTextArea.value);
+        fetch('/addComment', {
+            method: "POST",
+            body: formData
+        }).then(response=>response.json())
+            .then(result=>{
+                console.log(result);
+                if(result.result == 'success')location.reload();
+            })
+    }
 </script>

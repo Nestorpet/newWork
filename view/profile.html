@@ -1,0 +1,22 @@
+<script >
+    let container=document.getElementById('container');
+    fetch('../php/handlerGetProfile.php')
+        .then(function (response){return response.json()})
+        .then(function (result){
+            console.log(result);
+            container.innerHTML +=`
+            <div class="row">
+            <div class="col-3">
+            <img src="${result[0]['img']}" style="width: 100%;">
+            <form action="php/handlerUserAvatar.php" method="post" enctype="multipart/form-data">
+                <input type="file" name="userFile"><input type="submit" value="Загрузить">
+            </form>
+            </div>
+            <div class="col-9">
+            "Name:" ${result[0]['name']} <br>
+            "LastName: " ${result[0]['lastname']}
+            </div>
+        </div>
+            `;
+        }) 
+</script>

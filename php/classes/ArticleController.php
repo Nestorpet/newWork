@@ -18,4 +18,41 @@ class ArticleController{
         return json_encode($row);
 
     }
+    public static function addArticle(){
+        global $mysqli;
+        $title = $_POST['title'];
+        $content = $_POST['content'];
+        $author = $_SESSION['id'];
+        $mysqli->query("INSERT INTO `articles`(`title`, `content`, `author`) VALUES ('$title','$content','$author')");
+        header("Location: /articles");
+    }
+
+    public static function deleteArticle(){
+        global $mysqli;
+        $id = $_GET['id'];
+        $mysqli->query("DELETE FROM `articles` WHERE id='$id'");
+         $mysqli->query("DELETE FROM `commetns` WHERE article_id='$id'");
+        header("Location: /articles");
+    }
+
+   
+    public static function addComment(){
+        global $mysqli;
+        $userId = $_SESSION['id'];
+        $articleId = $_POST['article_id'];
+        $comment = $_POST['comment'];
+        $mysqli->query("INSERT INTO `comments`(`user_id`, `article_id`, `comment`) VALUES ('$userId', '$articleId', '$comment')");
+        exit(json_encode(['result'=>'success']));
+    }
+
+    public static function getCommentByArticalId($articleId){
+        global $mysqli;
+        $result = $mysqli->query("SELECT * FROM `comments` WHERE article_id='$articleId'");
+        $comments = [];
+        while (($row=$result->fetch_assoc()) !=null){
+            $comments[]=$row;
+        }
+        exit(json_encode($comments));
+       
+    }
 }

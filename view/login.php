@@ -1,6 +1,6 @@
 
         
-    <div class="container my-3">
+   <div class="container my-3">
         <h1 class="text-center my-3 mptfont">Вход</h1>
         <div class="col-md-5 mx-auto">
             <form action="php/handlerLogin.php" method="post">
@@ -22,5 +22,19 @@
         </div>
     </div>
 
-
-    
+                <div class="d-flex flex-column m-3 p-5">
+                            <div class="p-2"></div>
+                            <div class="p-2"></div>
+                            
+                </div>
+                <div class="d-flex flex-column m-3 p-5">
+                    <div class="p-2"></div>
+                    <div class="p-2"></div>
+                    
+                </div> 
+              
+                <div class="d-flex flex-column m-3 p-5">
+                    <div class="p-2"></div>
+                    <div class="p-2"></div>
+                    
+                </div>

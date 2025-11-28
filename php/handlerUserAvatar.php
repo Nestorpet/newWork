@@ -16,7 +16,7 @@ foreach ($goodExtension as $e){
         move_uploaded_file($temp, $dir.$name);
         $mysqli->query("UPDATE `users` SET `img`='$dirIn' WHERE id =$id");
         $_SESSION['img']=$dirIn;
-        header("Location:../profile.php");
+        header("Location:../profile");
         exit();  
     }
 }
