@@ -18,6 +18,7 @@ class ArticleController{
         return json_encode($row);
 
     }
+
     public static function addArticle(){
         global $mysqli;
         $title = $_POST['title'];
@@ -29,13 +30,13 @@ class ArticleController{
 
     public static function deleteArticle(){
         global $mysqli;
+        //test
         $id = $_GET['id'];
+        // echo $id;
         $mysqli->query("DELETE FROM `articles` WHERE id='$id'");
-         $mysqli->query("DELETE FROM `commetns` WHERE article_id='$id'");
         header("Location: /articles");
     }
 
-   
     public static function addComment(){
         global $mysqli;
         $userId = $_SESSION['id'];
@@ -47,7 +48,7 @@ class ArticleController{
 
     public static function getCommentByArticalId($articleId){
         global $mysqli;
-        $result = $mysqli->query("SELECT * FROM `comments` WHERE article_id='$articleId'");
+        $result = $mysqli->query("SELECT comments.comment, users.name, users.lastname FROM comments, users WHERE article_id='$articleId' AND users.id=comments.user_id;");
         $comments = [];
         while (($row=$result->fetch_assoc()) !=null){
             $comments[]=$row;
