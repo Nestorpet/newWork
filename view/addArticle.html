@@ -1,12 +1,12 @@
 
         <h1 class="text-center">Добавить статью</h1>
         <div class="col-md-9 mx-auto" >
-            <form action="/addArticle" method="post">
+            <form onsubmit="sendForm(this); return false;" action="/addArticle" method="post">
                     <div class="mb-3">
                         <input type="text" class="form-control" name="title" placeholder="Заголовок">
                     </div>
                     <div class="mb-3">
-                        <textarea id="sample" name="content" class="form-control" placeholder="Текст статьи"></textarea>
+                        <textarea id="sample" class="form-control"></textarea>
                     </div>
                     <!-- <div class="mb-3">
                         <input type="text" class="form-control" name="author" placeholder="Автор">
@@ -47,6 +47,17 @@
                 ]
 
             });
+            function sendForm(form){
+                let formData = new FormData(form);
+                formData.append('content', editor.getContents());
+                fetch('/addArticle', {
+                    method: "POST",
+                    body: formData
+                }).then(response=>response.json())
+                    .then(result=>{
+                        console.log(result);
+                    })
+            }
         </script>
 
 

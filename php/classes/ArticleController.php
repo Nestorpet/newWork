@@ -30,10 +30,9 @@ class ArticleController{
 
     public static function deleteArticle(){
         global $mysqli;
-        //test
         $id = $_GET['id'];
-        // echo $id;
         $mysqli->query("DELETE FROM `articles` WHERE id='$id'");
+        $mysqli->query("DELETE FROM `comments` WHERE article_id='$id'");
         header("Location: /articles");
     }
 
