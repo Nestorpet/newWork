@@ -24,8 +24,18 @@ class ArticleController{
         $title = $_POST['title'];
         $content = $_POST['content'];
         $author = $_SESSION['id'];
-        $mysqli->query("INSERT INTO `articles`(`title`, `content`, `author`) VALUES ('$title','$content','$author')");
-        header("Location: /articles");
+        $html = str_get_html($content);
+        $img=$html->find('img',0);
+        $src= $img->src;
+        $base64 = explode(',',$src)[1];
+        fopen('img/article_image/filename.jpg','wb');
+        
+        
+        exit;
+
+
+        // $mysqli->query("INSERT INTO `articles`(`title`, `content`, `author`) VALUES ('$title','$content','$author')");
+        // header("Location: /articles");
     }
 
     public static function deleteArticle(){

@@ -34,8 +34,8 @@
                 <?php if (array_key_exists("id",$_SESSION)):?>
                     <a href="php/handlerExit.php" class="btn btn-success me-3">Выход</a>
                 <?php else:?> 
-                    <a href="login.php" class="btn btn-success me-3">Вход</a>
-                    <a href="reg.php" class="btn btn-success">Регистрация</a>
+                    <a href="/login" class="btn btn-success me-3">Вход</a>
+                    <a href="/rege" class="btn btn-success">Регистрация</a>
                 <?php endif;?>
           </div>
         </div>
