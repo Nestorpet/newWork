@@ -6,16 +6,15 @@ $mysqli= new mysqli("localhost", "root", "", "work");
 require_once('php/classes/ArticleController.php');
 require_once('php/classes/UserController.php');
 require_once('php/classes/simple_html_dom.php');
+require_once('php/classes/Route.php');
 
+Route::view('/login', 'view/login.html');
+Route::view('/reg', 'view/reg.html'); 
+Route::post('/login', function(){return UserController::login();});
 
-
-if($path[1]=="login" && $method=='GET'){
-    $content =  file_get_contents('view/login.html');
-}elseif($path[1]=='login' && $method=='POST'){
+if($path[1]=='login' && $method=='POST'){
     exit(UserController::login());
 
-}elseif($path[1]=="reg" && $method=='GET'){
-    $content = file_get_contents('view/reg.html');
 }elseif($path[1]=='reg' && $method=='POST'){
     UserController::reg();
 
