@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style1.css">
+    <script src="script/script.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navcolor">
+        <div class="container-fluid" >
+            <a class="navbar-brand logo" href="https://mpt.avo.ru/" title="Перейти на сайт МПТ" > <img class="logo" src="img/AVO.png" /></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+            <div class="contain">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                  <li class="nav-item">
+                    <a class="nav-link active pe-4" aria-current="page" href="pages/index_ND.php">Нормативные документы</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active pe-4" aria-current="page" href="pages/index_Stat.html">Статистика</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link active pe-4" aria-current="page" href="pages/indexAllPodved.php">Подведы</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link active pe-4" aria-current="page" href="pages/index_pok.html">Показатели</a>
+                  </li> 
+                                        
+                     
+                      <!-- <li class="nav-item dropdown ps-3">
+                        <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Подведы
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="pages/index_ND.html">Действие</a></li>
+                          <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                        </ul>
+                      </li> -->
+                  <!-- <li class="nav-item dropdown pe-4">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Показатели
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="pages/index_pok.html">2025</a></li>
+                      <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                    </ul>
+                  </li> -->
+                 
+                </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+     <!-- end of the top_panal-->
+      <div id="today" class="mptfont" style="text-align: left; font-size: 20px; padding-left: 40px;">
+        <script>
+           let week = ["Восресенье","Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"]
+            let wDay = new Date().getDay();
+            let NDay ="";
+            
+            switch(wDay){
+              case 0: NDay = week[wDay];
+              break;
+              case 1: NDay = week[wDay];
+              break;
+              case 2: NDay = week[wDay];
+              break;
+              case 3: NDay = week[wDay];
+              break;
+              case 4: NDay = week[wDay];
+              break;
+              case 5: NDay = week[wDay];
+              break;
+              case 6: NDay = week[wDay];
+              break;
+            }
+          const d = new Date();
+          let months = ["Января", "Февраля", "Марта", "Апреля", "Мая","Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"];
+          document.getElementById('today').innerHTML = '"' + d.getDate() +'"' +" "+ months[(d.getMonth())] +  " " + d.getFullYear() + " " + NDay;
+          // + " " + d.getHours() + " " + d.getMinutes() часы и минуты
+        </script>
+
+      </div>
+
+
+      <div class="container  mt-5">
+            <p class="mptfont">Министерство предпринимательства и туризма Владимирской области</p>
+          <div class="container mt-5 main-pictur">
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="4000">
+                        <img src="img/golden_gate1.jpeg" class="d-block w-100" alt="..." >
+                        <div class="carousel-caption d-none d-md-block WhiteBlack"  >
+                            <div class="title-foto">
+                                <p>Владимир</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="img/kirgach.jpg" class="d-block w-100" alt="..." >
+                        <div class="carousel-caption d-none d-md-block WhiteBlack"  >
+                            <div class="title-foto">
+                                <p>Киржач</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="4000">
+                        <img src="img/murom.webp" class="d-block w-100" alt="..." >
+                        <div class="carousel-caption d-none d-md-block WhiteBlack"  >
+                            <div class="title-foto">
+                                <p>Муром</p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+      </div>
+        
+
+
+
+        <div class="container fixed-bottom title-bottom">
+            <div><b>Внутренний портал Министерства предпринимательства и туризма</b></div>
+          </div>
+        
+      
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+

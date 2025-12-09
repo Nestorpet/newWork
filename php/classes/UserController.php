@@ -6,13 +6,12 @@ class UserController{
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $pass = $_POST['pass'];
-        $result = $mysqli -> query("SELECT * FROM users WHERE email='$email'");
-        if($result->num_rows){
-            echo "Такой пользователь уже существует <a href='/reg'>Зарегистрировать другого</a>";
+        $result=$mysqli->query("SELECT * FROM users WHERE email='$email'");
+        if ($result->num_rows){
+            return json_encode(['result'=>'error']);
         }else{
-            $mysqli->query("INSERT INTO `users`(`name`, `lastname`, `email`, `pass`) VALUES ('$name','$lastname','$email','$pass')");
-            echo "Пользователь зарегестрирован";
-            header("Location:/login");
+            $mysqli->query( "INSERT INTO `users`(`name`, `lastname`, `email`, `pass`) VALUES ('$name','$lastname','$email','$pass')");
+            return json_encode(['result'=>'success']);
         }
     }
 
@@ -49,6 +48,7 @@ class UserController{
     public static function updateUserAvatar(){
         global $mysqli;
         $id=$_SESSION['id'];
+        //var_dump($_SESSION);
         $userFile = $_FILES['userFile'];
         $arr=(explode(".", $userFile['name']));
         $extension=$arr[count($arr)-1];
@@ -64,9 +64,14 @@ class UserController{
                 $mysqli->query("UPDATE `users` SET `img`='$dirIn' WHERE id =$id");
                 $_SESSION['img']=$dirIn;
                 header("Location:/profile");
-                exit();  
+                return;  
             }
         }
-        exit("Type file ERROR!");
+        return("Type file ERROR!");
+    }
+
+    public static function logout(){
+        session_destroy();
+        header("Location: /");
     }
 }

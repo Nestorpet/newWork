@@ -4,8 +4,7 @@ class Route{
         if($_SERVER['REQUEST_METHOD'] !="GET")return;
         $requestURI=$_SERVER['REQUEST_URI'];
         if($requestURI==$uri){
-            $callback();
-            exit();
+            exit($callback());
         }
 
     }
@@ -19,15 +18,17 @@ class Route{
     }
 
     public static function view($uri, $viewPath){
-        if($_SERVER['REQUEST_METHOD'] !="GET")return;
-        $requestURI=$_SERVER['REQUEST_URI'];
-        if($requestURI==$uri){
-            $content = file_get_contents($viewPath);
+        if($_SERVER['REQUEST_METHOD'] != "GET") return;
+        $requestURI = $_SERVER['REQUEST_URI'];
+        if(strripos($uri, "{")){
+            $path = explode("/", $requestURI);
+            if(count($path)<3) return;
+            $uri = str_replace("{id}", $path[2], $uri);
+        }
+        if($requestURI == $uri){
+            $content =  file_get_contents($viewPath);
             require_once('template.php');
             exit();
         }
     }
-
-
-
 }

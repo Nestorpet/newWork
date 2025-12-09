@@ -25,10 +25,10 @@
                 <a class="nav-link active" aria-current="page" href="1index.php">Главная</a>
               </li>
               <li class="nav-item ps-3">
-                <a class="nav-link" href="articles.php">Статьи</a>
+                <a class="nav-link" href="/articles">Статьи</a>
               </li>
                <li class="nav-item ps-3">
-                <a class="nav-link" href="profile.php">Профиль</a>
+                <a class="nav-link" href="/profile">Профиль</a>
               </li>
 
 
